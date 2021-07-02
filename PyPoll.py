@@ -52,32 +52,53 @@ with open(results_path, "r") as election_data:
         # add a vote to the current candidate's count
         candidate_votes[candidate_name] += 1
 
-# calculate the vote percentage for each candidate
-for candidate_name in candidate_votes:
-    # get the number of votes
-    votes = candidate_votes[candidate_name]
-    # calculate the percentage
-    vote_percentage = float(votes) / float(total_votes) * 100
-
-    # determine if current vote count is greater than current winning count
-    if (votes > winning_count) and (vote_percentage > winning_percentage):
-        # set winning variables to current vote count, percentage, and candidate name
-        winning_count = votes
-        winning_percentage = vote_percentage
-        winning_candidate = candidate_name
-
-    # print out the percentage rounded to 1 decimal place
-    print(f"{candidate_name}: {vote_percentage:.1f}% ({votes:,})\n")
-
-winning_candidate_summary = (
-    f"-------------------------\n"
-    f"Winner: {winning_candidate}\n"
-    f"Winning Vote Count: {winning_count:,}\n"
-    f"Winning Percentage: {winning_percentage:.1f}%\n"
-    f"-------------------------\n"
-)
-
-print(winning_candidate_summary)
-
 # open analysis file to write analysis
-#with open(analysis_path, "w") as txt_file:
+with open(analysis_path, "w") as txt_file:
+
+    election_results = (
+        f"\nElection Results\n"
+        f"-------------------------\n"
+        f"Total Votes: {total_votes:,}\n"
+        f"-------------------------\n"
+    )
+
+    # print total vote count to terminal
+    print(election_results, end="")
+
+    # write the total vote count to the analysis text file
+    txt_file.write(election_results)
+
+    # calculate the vote percentage for each candidate
+    for candidate_name in candidate_votes:
+        # get the number of votes
+        votes = candidate_votes[candidate_name]
+        # calculate the percentage
+        vote_percentage = float(votes) / float(total_votes) * 100
+
+        # determine if current vote count is greater than current winning count
+        if (votes > winning_count) and (vote_percentage > winning_percentage):
+            # set winning variables to current vote count, percentage, and candidate name
+            winning_count = votes
+            winning_percentage = vote_percentage
+            winning_candidate = candidate_name
+
+        # print the candidate's results to terminal
+        candidate_results = (f"{candidate_name}: {vote_percentage:.1f}% ({votes:,})\n")
+        print(candidate_results)
+
+        # write the candidate's results to analysis text file
+        txt_file.write(candidate_results)
+
+    winning_candidate_summary = (
+        f"-------------------------\n"
+        f"Winner: {winning_candidate}\n"
+        f"Winning Vote Count: {winning_count:,}\n"
+        f"Winning Percentage: {winning_percentage:.1f}%\n"
+        f"-------------------------\n"
+    )
+
+    # print winning candidate to terminal
+    print(winning_candidate_summary)
+    # write winning candidate to analysis text file
+    txt_file.write(winning_candidate_summary)
+    
