@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-A Colorado Board of Elections employee has given the following tasks to be completed in an election audit of a recent congressional election.
+A Colorado Board of Elections employee has given the following tasks to be completed in an audit of a recent congressional election.
 
 1. Calculate the total number of votes cast.
 2. Get complete lists of candidates who received votes and counties that participated in the election.
