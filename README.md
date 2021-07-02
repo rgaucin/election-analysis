@@ -11,8 +11,8 @@ A Board of Elections employee has given the following tasks to be completed in a
 5. Determine the winner of the election based on popular vote.
 
 ## Resources
-Data source: election_results.csv
-Software: Python 3.7.6, Visual Studio Code 1.57.1
+   - Data source: election_results.csv
+   - Software: Python 3.7.6, Visual Studio Code 1.57.1
 
 ## Summary
 
