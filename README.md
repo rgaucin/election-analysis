@@ -44,9 +44,11 @@ The following is an image of election_analysis.txt, an output of the election re
 ## Election Audit Summary
 
 The script written for this analysis can be used with any number of candidates and any number of counties. With modifications, the script can be applied to any election, provided the data is similarly laid out to this one. Potential modifications include:
-	- Rewriting the lines of code that record the candidate and county for each vote, such that the code first finds the indices for those fields by looking through the data's header. This would allow the script to work regardless of how the data is organized (e.g., the candidate name could come before the county name and the script would still function).
+
+- Rewriting the lines of code that record the candidate and county for each vote, such that the code first finds the indices for those fields by looking through the data's header. This would allow the script to work regardless of how the data is organized (e.g., the candidate name could come before the county name and the script would still function).
 	
 ![Name Retrieval Code](Resources/name-retrieval-code.png)
 	
-	- Editing the text so that it refers not to counties but to other types of regions (e.g., states).
-	- Adjusting the calculation of the winner for elections in which the winner needs a particular number of votes or a particular percentage of the vote.
+- Editing the text so that it refers not to counties but to other types of regions (e.g., states).
+
+- Adjusting the calculation of the winner for elections in which the winner needs a particular number of votes or a particular percentage of the vote.
