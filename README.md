@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-A Board of Elections employee has given the following tasks to complete an election audit of a recent congressional election.
+A Board of Elections employee has given the following tasks to be completed in an election audit of a recent congressional election.
 
 1. Calculate the total number of votes cast.
 2. Get a complete list of candidates who received votes.
